@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<audio class="bgm" id="snowReg" autoplay loop>
+    <source src="assets/buried_in_snow_eflat.mp3" type="audio/mpeg">
+</audio>
+
+<!-- <audio id="snowBad" autoplay>
+    <source src="assets/buried_in_snow_multi.mp3" type="audio/mpeg">
+</audio> -->
+
+<div id="ui">
+        <div id="toolbar">
+            <div id="toolbarLeft">
+                <div class="tool appName">Finder</div>
+                <div class="tool">File</div>
+                <div class="tool">Edit</div>
+                <div class="tool">View</div>
+                <div class="tool">Go</div>
+                <div class="tool">Window</div>
+                <div class="tool">Help</div>
+            </div>
+            <div id="toolbarRight">
+                <div class="tool">[Bat]</div>
+                <div class="tool">[Vol]</div>
+                <div class="tool">[Time]</div>
+                <div class="tool appName">Susana</div>
+                <div class="tool">[Search]</div>
+            </div>
+        </div>
+
+<!-- image modal, hidden by default but will display when image is clicked -->
+    <div id="finder-window" class="window drag">
+        <div class="window-top">
+            <img src="assets/close_.png" class="close">
+            <img src="assets/min_.png" class="min">
+            <img src="assets/max_.png" class="max">
+        </div>
+        <div class="window-content">
+        </div>
+    </div>
+
+
+    <div id="safari-window" class="window drag">
+        <div class="window-top">
+            <img src="assets/close_.png" class="close">
+            <img src="assets/min_.png" class="min">
+            <img src="assets/max_.png" class="max">
+        </div>
+        <div class="window-content">
+        </div>
+    </div>
+
+    <div id="word-window" class="window drag">
+        <div class="window-top">
+            <img src="assets/close_.png" class="close">
+            <img src="assets/min_.png" class="min">
+            <img src="assets/max_.png" class="max">
+        </div>
+        <div class="window-content">
+        </div>
+    </div>
+
+    <div id="qtp-window" class="window drag">
+        <div class="window-top">
+            <img src="assets/close_.png" class="close">
+            <img src="assets/min_.png" class="min">
+            <img src="assets/max_.png" class="max">
+        </div>
+        <div class="window-content">
+        </div>
+    </div>
+
+    <div id="trash-window" class="window drag">
+        <div class="window-top">
+            <img src="assets/close_.png" class="close">
+            <img src="assets/min_.png" class="min">
+            <img src="assets/max_.png" class="max">
+        </div>
+        <div class="window-content">
+        </div>
+    </div>
+
+
+
+        <div id="dock">
+            <img class="appIcon" id="finder-icon" href="#finder-window" src="assets/finder.png">
+
+            <!-- <img class="appIcon" id="mail-icon" href="#mail-window" src="assets/mail.png"> -->
+
+            <img class="appIcon" id="word-icon" href="#word-window" src="assets/word.png">
+
+            <img class="appIcon" id="safari-icon" href="#safari-window" src="assets/safari.png">
+
+            <img class="appIcon" id="calendar-icon" href="#calendar-window" src="assets/calendar.png">
+
+            <img class="appIcon" id="photobooth-icon" href="#photobooth-window" src="assets/photobooth.png">
+
+            <img class="appIcon" id="garageband-icon" href="#garageband-window" src="assets/garageband.png">
+
+            <img class="appIcon" id="imovie-icon" href="#imovie-window" src="assets/imovie.png">
+
+            <img class="appIcon" id="qtp-icon" href="#qtp-window" src="assets/quicktime_alt.png">
+
+            <img class="appIcon" id="settings-icon" href="#settings-window" src="assets/preview.png">
+
+            <img class="appIcon" id="preview-icon" href="#preview-window" src="assets/preferences.png">
+
+            <img src="assets/separator.png">
+
+            <img class="appIcon" id="trash-icon" href="#trash-window" src="assets/trash_full.png">
+        </div>
+
+    
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
