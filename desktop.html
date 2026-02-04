@@ -9,15 +9,15 @@
 </head>
 <body>
 
-<audio class="bgm" id="snowReg" autoplay loop>
+<audio id="snowReg" autoplay loop>
     <source src="assets/buried_in_snow_eflat.mp3" type="audio/mpeg">
 </audio>
 
-<!-- <audio id="snowBad" autoplay>
+<audio id="snowBad" loop>
     <source src="assets/buried_in_snow_multi.mp3" type="audio/mpeg">
-</audio> -->
+</audio>
 
-<div id="ui">
+<div id="ui" class="bgIceberg">
         <div id="toolbar">
             <div id="toolbarLeft">
                 <div class="tool appName">Finder</div>
@@ -29,34 +29,56 @@
                 <div class="tool">Help</div>
             </div>
             <div id="toolbarRight">
-                <div class="tool">[Bat]</div>
-                <div class="tool">[Vol]</div>
-                <div class="tool">[Time]</div>
+                <div class="tool"><img src="assets/batteryicon.png"></div>
+                <div class="tool"><img src="assets/volumeicon.png"></div>
+                <div class="tool">Wed Feb 4</div>
                 <div class="tool appName">Susana</div>
-                <div class="tool">[Search]</div>
+                <div class="tool"><img src="assets/searchicon.png"></div>
             </div>
         </div>
 
+<div class="desktop-space">
+
+<div class="fileHolder"><img class="appIcon" id="berries" href="#berries-window" src="assets/berries.jpeg"><div class="fileName">holly bush beries.jpeg</div></div>
+
+<div class="fileHolder"><img class="appIcon" id="snowyroof" href="#snowyroof-window" src="assets/snowyroof.jpg"><div class="fileName">winter_ 2012.jpg</div></div>
+
+<div class="fileHolder"><img class="appIcon" id="monkey" href="#monkey-window" src="assets/monkeyhand.jpg"><div class="fileName">01100101001 5th birthday.jpg</div></div>
+
+<div class="fileHolder"><img class="appIcon" id="hallway" href="#hallway-window" src="assets/dark_hallway.jpeg"><div class="fileName">my_ basement.jpeg</div></div>
+
+<div class="fileHolder"><img class="appIcon" id="windowlight" href="#windowlight-window" src="assets/windowlight.jpg"><div class="fileName">??</div></div>
+
+<!-- <div class="fileHolder"><img class="appIcon" id="deadmau5" href="#deadmau5-window" src="assets/deadmau5.jpg"><div class="fileName"> </div></div> -->
+
+
+</div>
+
 <!-- image modal, hidden by default but will display when image is clicked -->
     <div id="finder-window" class="window drag">
-        <div class="window-top">
+        <div class="window-top" style="background: transparent;">
             <img src="assets/close_.png" class="close">
             <img src="assets/min_.png" class="min">
             <img src="assets/max_.png" class="max">
+            <div class="window-name" style="margin: 0 35%;">Garcia Computer</div>
         </div>
-        <div class="window-content">
-        </div>
+        <p id="ithink">I think we all want to go back to a time where we didn't know what any of it meant.</p>
+        <p id="idont">I don't even remember what this computer looks like.</p>
+        <!-- <div class="window-content">
+        </div> -->
     </div>
 
 
     <div id="safari-window" class="window drag">
-        <div class="window-top">
+        <div class="window-top" style="background: transparent;">
             <img src="assets/close_.png" class="close">
             <img src="assets/min_.png" class="min">
             <img src="assets/max_.png" class="max">
+            <div class="window-name" style="margin: 0 40%;">PBS Kids</div>
         </div>
-        <div class="window-content">
-        </div>
+            <p id="sitenowork">This site hasn't been working for a long time. Why am I here again?</p>
+        <!-- <div class="window-content">
+        </div> -->
     </div>
 
     <div id="word-window" class="window drag">
@@ -64,9 +86,24 @@
             <img src="assets/close_.png" class="close">
             <img src="assets/min_.png" class="min">
             <img src="assets/max_.png" class="max">
+            <div class="window-name">Untitled document</div>
         </div>
         <div class="window-content">
+            <img src="assets/wordonmac.png" style="position: absolute; margin-top: 5px;">
+            <!-- <form>  -->
+            <textarea class="wordDoc" placeholder="Write a werewolf story."></textarea>
+            <!-- </form> -->
         </div>
+    </div>
+
+<div id="photobooth-window" class="window drag" >
+        <div class="window-top">
+            <img src="assets/close_.png" class="close">
+            <img src="assets/min_.png" class="min">
+            <img src="assets/max_.png" class="max">
+            <div class="window-name" style="margin: 0 40%; color: white;">PhotoBooth</div>
+        </div>
+        <div id="dangerzone" onclick="cantsee()"></div>
     </div>
 
     <div id="qtp-window" class="window drag">
@@ -74,49 +111,150 @@
             <img src="assets/close_.png" class="close">
             <img src="assets/min_.png" class="min">
             <img src="assets/max_.png" class="max">
+            <div class="window-name" style="margin: 0 13%; color: white;">Screen Recording 2014-09-03 at 319.57 PM.mp4</div>
+        </div>
+        <video controls>
+            <source src="assets/screen_recording_quality.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="berries-window" class="window drag preview-window">
+        <div class="window-top">
+            <img src="assets/close_.png" class="close">
+            <img src="assets/min_.png" class="min">
+            <img src="assets/max_.png" class="max">
+            <div class="window-name">holly bush beries.jpeg</div>
         </div>
         <div class="window-content">
+            <img src="assets/berries.jpeg">
         </div>
     </div>
+
+    <div id="snowyroof-window" class="window drag preview-window">
+        <div class="window-top">
+            <img src="assets/close_.png" class="close">
+            <img src="assets/min_.png" class="min">
+            <img src="assets/max_.png" class="max">
+            <div class="window-name">winter_2012.jpg</div>
+        </div>
+        <div class="window-content">
+            <p id="mysnow1">it's funny. all i remember is the snow.</p>
+                <p id="mysnow2">i never see this snow anymore.</p>
+            <img src="assets/snowyroof.jpg">
+        </div>
+    </div>
+
+    <div id="monkey-window" class="window drag preview-window">
+        <div class="window-top">
+            <img src="assets/close_.png" class="close">
+            <img src="assets/min_.png" class="min">
+            <img src="assets/max_.png" class="max">
+            <div class="window-name">01100101001 5th birthday.jpg</div>
+        </div>
+        <div class="window-content">
+            <img src="assets/monkeyhand.jpg">
+        </div>
+    </div>
+
+    <div id="hallway-window" class="window drag preview-window">
+        <div class="window-top">
+            <img src="assets/close_.png" class="close">
+            <img src="assets/min_.png" class="min">
+            <img src="assets/max_.png" class="max">
+            <div class="window-name">my_basement.jpeg</div>
+        </div>
+        <div class="window-content">
+            <p id="basement1">What was that book in the basement?</p>
+            <p id="basement2">It'll tell me everything I need to know. About who I was.</p>
+                <p id="basement3">Everything down there is dusty and grimy, filled with cobwebs, dead bugs, and mold.</p>
+                <p id="basement4">Those pieces of paper I know we still have. Let me find them.</p>
+            <img src="assets/dark_hallway.jpeg">
+        </div>
+    </div>
+
+    <div id="windowlight-window" class="window drag preview-window">
+        <div class="window-top">
+            <img src="assets/close_.png" class="close">
+            <img src="assets/min_.png" class="min">
+            <img src="assets/max_.png" class="max">
+            <div class="window-name">??</div>
+        </div>
+        <div class="window-content">
+            <img src="assets/windowlight.jpg">
+        </div>
+    </div>
+    
+    <div id="settings-window" class="window drag">
+        <div class="window-top" style="background: transparent;">
+            <img src="assets/close_.png" class="close">
+            <img src="assets/min_.png" class="min">
+            <img src="assets/max_.png" class="max">
+        </div>
+        <img id="currentBg" src="assets/iceberg.jpg">
+        <div id="settings-grid">
+            <img class="bg" id="aurora" src="assets/aurora.jpg">
+            <img class="bg" id="iceberg" src="assets/iceberg.jpg">
+            <img class="bg" id="snowyhills" src="assets/snowy_hills.jpg">
+            <img class="bg" id="water" src="assets/water.jpg">
+            <img class="bg" id="tranquil" src="assets/tranquil_surface.jpg">
+            <img class="bg" id="tiger" src="assets/tiger.jpg">
+        </div>
+    </div>
+
 
     <div id="trash-window" class="window drag">
         <div class="window-top">
             <img src="assets/close_.png" class="close">
             <img src="assets/min_.png" class="min">
             <img src="assets/max_.png" class="max">
+            <div class="window-name" style="margin: 0 35%;">Trash</div>
+        </div>
+        <div class="window-content" style="background-color: white;">
+            <div class="fileHolder" onclick="stopMusic()"><img class="appIcon" id="deadmau5" href="#deadmau5-window" src="assets/deadmau5.jpg"><div class="fileName"> </div></div>
+        </div>
+    </div>
+
+
+    <div id="deadmau5-window" class="window drag preview-window">
+        <div class="window-top">
+            <img src="assets/close_.png" class="close" id="evilclose">
+            <img src="assets/min_.png" class="min">
+            <img src="assets/max_.png" class="max">
+            <div id="ishouldnt">I shouldn't look at this. I'll get in trouble.</div>
         </div>
         <div class="window-content">
+            <img src="assets/deadmau5_cen.jpg">
         </div>
     </div>
 
 
 
         <div id="dock">
-            <img class="appIcon" id="finder-icon" href="#finder-window" src="assets/finder.png">
+            <div class="appHolder" id="finder-holder" title="Finder"><img class="appIcon" id="finder-icon" href="#finder-window" src="assets/finder.png"></div>
 
             <!-- <img class="appIcon" id="mail-icon" href="#mail-window" src="assets/mail.png"> -->
 
-            <img class="appIcon" id="word-icon" href="#word-window" src="assets/word.png">
+            <div class="appHolder" id="word-holder" title="Word"><img class="appIcon" id="word-icon" href="#word-window" src="assets/word.png"></div>
 
-            <img class="appIcon" id="safari-icon" href="#safari-window" src="assets/safari.png">
+            <div class="appHolder" id="safari-holder" title="Safari"><img class="appIcon" id="safari-icon" href="#safari-window" src="assets/safari.png"></div>
 
-            <img class="appIcon" id="calendar-icon" href="#calendar-window" src="assets/calendar.png">
+            <div class="appHolder" onclick="dontcare()" title="Calendar"><img class="appIcon" id="calendar-icon" href="#calendar-window" src="assets/calendar.png"></div>
 
-            <img class="appIcon" id="photobooth-icon" href="#photobooth-window" src="assets/photobooth.png">
+            <div class="appHolder" id="photobooth-holder" title="PhotoBooth"><img class="appIcon" id="photobooth-icon" href="#photobooth-window" src="assets/photobooth.png"></div>
 
-            <img class="appIcon" id="garageband-icon" href="#garageband-window" src="assets/garageband.png">
+            <div class="appHolder" onclick="songs()" title="GarageBand"><img class="appIcon" id="garageband-icon" href="#garageband-window" src="assets/garageband.png"></div>
 
-            <img class="appIcon" id="imovie-icon" href="#imovie-window" src="assets/imovie.png">
+            <div class="appHolder" onclick="movies()" title="iMovie"><img class="appIcon" id="imovie-icon" href="#imovie-window" src="assets/imovie.png"></div>
 
-            <img class="appIcon" id="qtp-icon" href="#qtp-window" src="assets/quicktime_alt.png">
+            <div class="appHolder" id="qtp-holder" title="QuickTime Player"><img class="appIcon" id="qtp-icon" href="#qtp-window" src="assets/quicktime_alt.png"></div>
 
-            <img class="appIcon" id="settings-icon" href="#settings-window" src="assets/preview.png">
+            <div class="appHolder" id="settings-holder" title="System Preferences"><img class="appIcon" id="settings-icon" href="#settings-window" src="assets/preferences.png"></div>
 
-            <img class="appIcon" id="preview-icon" href="#preview-window" src="assets/preferences.png">
+            <div class="appHolder" id="preview-holder" title="Preview"><img class="appIcon" id="preview-icon" href="#preview-window" src="assets/preview.png"></div>
 
-            <img src="assets/separator.png">
+            <img id="separator" src="assets/separator.png">
 
-            <img class="appIcon" id="trash-icon" href="#trash-window" src="assets/trash_full.png">
+            <div class="appHolder" id="trash-holder" title="Trash"><img class="appIcon" id="trash-icon" href="#trash-window" src="assets/trash_full.png"></div>
         </div>
 
     

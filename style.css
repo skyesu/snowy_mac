@@ -14,6 +14,11 @@ body {
     font-size: 11pt;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .login {
     z-index: 1;
     position: fixed;
@@ -93,12 +98,40 @@ body {
     height: 100vh;
     width: 100vw;
     /* position: fixed; */
-    background: url("assets/iceberg.jpg");
-    background-size: cover;
     animation-name: fadeIn;
     animation-duration: 2s;
     /* animation-delay: 1s; */
     font-size: 10pt;
+}
+
+.bgIceberg {
+    background: url("assets/iceberg.jpg");
+    background-size: cover;
+}
+
+.bgWater {
+    background: url("assets/water.jpg");
+    background-size: cover;
+}
+
+.bgTiger {
+    background: url("assets/tiger.jpg");
+    background-size: cover;
+}
+
+.bgAurora {
+    background: url("assets/aurora.jpg");
+    background-size: cover;
+}
+
+.bgSnowy {
+    background: url("assets/snowy_hills.jpg");
+    background-size: cover;
+}
+
+.bgTranquil {
+    background: url("assets/tranquil_surface.jpg");
+    background-size: cover;
 }
 
 #toolbar {
@@ -126,6 +159,10 @@ body {
     cursor: default;
 }
 
+.tool img {
+    height: 1em;
+}
+
 .tool:hover, .tool:focus {
     color: white;
     background: linear-gradient(dodgerblue, blue);
@@ -135,24 +172,88 @@ body {
     font-weight: bold;
 }
 
+.desktop-space {
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    padding-bottom: 20%;
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+    justify-content: flex-start;
+    align-items: flex-end;
+    align-content: flex-start;
+}
+
+/* .file {
+
+} */
+
 #dock {
     display: flex;
     justify-content: center;
+    align-items: center;
+    /* align-content: center; */
     /* width: 100%; */
-    height: 90px;
+    height: 110px;
     background: url("assets/glass_dock.png") no-repeat center;
-    background-size: 850px 100%;
+    background-size: 850px 90%;
+    background-position: bottom;
 }
 
-.appIcon {
+@keyframes bounce {
+            from {
+                transform: translate3d(0, 0, 0);
+            }
+
+            to {
+                transform: translate3d(0, -30px, 0);
+            }
+        }
+
+.appHolder {
     width: 60px;
     height: 60px;
     margin: 5px;
     cursor: default;
 }
 
+.appSelected {
+    animation: bounce 0.5s;
+            animation-direction: alternate;
+            animation-timing-function: cubic-bezier(.05, .3, .3, .7);
+            animation-iteration-count: 6;
+}
+
+#separator {
+    height: 90%;
+    margin-top: 20px;
+}
+
+.fileHolder {
+    display: block;
+    position: relative;
+    width: 75px;
+    height: 75px;
+    margin: 25px 30px;
+    cursor: default;
+}
+
+.fileHolder img {
+    border: 5px solid white;
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 0 0 4px black;
+}
+
+.fileName {
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 0 4px black;
+    padding: 2px;
+}
+
 .window {
-    /* position: absolute; */
+    position: relative;
     display: none; /*Hidden by default
   /* z-index: 1; Sit on top */
   /* padding-top: 50px; Location of the box */
@@ -161,7 +262,7 @@ body {
   /* width: 900px; /* Full width */
   /* height: 600px; Full height */ 
   background-color: black;
-  overflow: auto; /* Enable scroll if needed */
+  overflow: hidden; /* Enable scroll if needed */
   border-radius: 5px;
   box-shadow: 0 0 2px;
 }
@@ -169,9 +270,9 @@ body {
 .window-top {
     display: flex;
     flex-direction: row;
-    /* position: fixed; */
+    position: absolute;
     width: 100%;
-    background-image: linear-gradient(whitesmoke, gray);
+    background-image: linear-gradient(whitesmoke, #aeaeae);
     padding: 5px;
 }
 
@@ -180,7 +281,10 @@ body {
   margin: auto;
   display: block;
   width: 100%;
-  background-color: white;
+  height: 100%;
+  padding-top: 20px;
+  background-color: gray;
+  overflow: scroll;
 }
 
 div.window-content img {
@@ -188,6 +292,11 @@ div.window-content img {
   max-height: 100%;
   display: block;
   margin: auto;
+}
+
+.window-name {
+    margin: 0 30%;
+    padding: 0;
 }
 
 /* 
@@ -256,13 +365,42 @@ div.window-content img {
 }
 
 #safari-window {
-    width: 900px;
+    width: 1000px;
     height: 700px;
+    background: url("assets/safari_pbs.png") no-repeat;
+    background-size: cover;
+}
+
+#sitenowork {
+    position: absolute;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    width: 300px;
+    top: 100px;
+    left: 40px;
+    font-size: 12pt;
 }
 
 #finder-window {
     width: 700px;
-    height: 500px;
+    height: 350px;
+    background: url("assets/finder_window2.png") no-repeat;
+    background-size: cover;
+}
+
+#ithink {
+    position: relative;
+    color: red;
+    font-family: 'Times New Roman', Times, serif;
+    width: 100px;
+    margin: 180px 0 0 140px;
+}
+
+#idont {
+    position: relative;
+    color: blue;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 50px 0 0 200px;
 }
 
 #word-window {
@@ -270,12 +408,167 @@ div.window-content img {
     height: 700px;
 }
 
+    .wordDoc {
+        width: 97%;
+        height: 94%;
+        margin-top: 110px;
+        padding: 50px;
+        align-content: flex-start;
+        align-items: flex-start;
+        font-family:'Times New Roman', Times, serif;
+        font-size: 10pt;
+    }
+
+    .wordDoc:focus {
+        outline: none;
+    }
+
+#photobooth-window {
+    width: 900px;
+    height: 570px;
+    background: url("assets/photobooth_window.png") no-repeat;
+    background-size: cover;
+}
+
+#photobooth-window .window-top {
+    background-image: linear-gradient(gray, black);
+}
+
+#dangerzone {
+    width: 95%;
+    height: 95%;
+    margin: 2%;
+}
+
 #qtp-window {
     width: 600px;
-    height: 300px;
+    height: 400px;
+}
+
+#qtp-window .window-top {
+    background-image: linear-gradient(gray, black);
+}
+
+video {
+    width: 100%;
+}
+
+.preview-window {
+    width: 700px;
+    height: 500px;
+}
+
+#mysnow1 {
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    color: navy;
+    width: 100px;
+    top: 40px;
+    left: 10px;
+    font-size: 16pt;
+}
+
+#mysnow2 {
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    color: gray;
+    width: 100px;
+    top: 70px;
+    left: 550px;
+}
+
+#basement1 {
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    color: antiquewhite;
+    width: 100px;
+    top: 30px;
+    left: 20px;
+    font-size: 12pt;
+}
+
+#basement2 {
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    width: 100px;
+    top: 90px;
+    left: 40px;
+}
+
+#basement3 {
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    width: 100px;
+    top: 70px;
+    left: 550px;
+}
+
+#basement4 {
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    width: 100px;
+    top: 250px;
+    left: 600px;
+    font-size: 10pt;
+}
+
+#ishouldnt {
+    margin-left: 200px;
+    font-size: 12pt;
+    color: maroon;
+}
+
+#settings-window {
+    width: 600px;
+    height: 500px;
+    background: url("assets/preferences_window.png") no-repeat;
+    background-size: cover;
+}
+
+#settings-grid {
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 400px;
+    gap: 15px;
+    top: 195px;
+    left: 190px;
+    /* height: 300px; */
+
+}
+
+.bg {
+    width: 80px;
+    /* height: 50px; */
+}
+
+#currentBg {
+    width: 108px;
+    /* height: 60px; */
+    position: absolute;
+    top: 104px;
+    left: 50px;
 }
 
 #trash-window {
     width: 700px;
-    height: 500px;
+    height: 350px;
+}
+
+@media screen and (max-width:900px) {
+    #dock {
+        background-size: 90% 100%;
+        align-items: center;
+    }
+
+    .appHolder {
+        max-width: 7%;
+        height: auto;
+        margin: 0.5%;
+        cursor: default;
+    }
 }
